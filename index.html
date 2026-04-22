@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大刀洗平和記念館 訪問記</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+      background: #f5f0e8;
+      color: #2a2a2a;
+      line-height: 1.9;
+    }
+
+    /* ヘッダー */
+    header {
+      background: #1a1a1a;
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px 50px;
+    }
+    header .label {
+      font-size: 0.85rem;
+      letter-spacing: 0.3em;
+      color: #aaa;
+      margin-bottom: 16px;
+      font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+    }
+    header h1 {
+      font-size: clamp(1.8rem, 5vw, 3.2rem);
+      letter-spacing: 0.15em;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+    header .subtitle {
+      font-size: 1rem;
+      color: #ccc;
+      letter-spacing: 0.2em;
+      font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+    }
+
+    /* メインコンテンツ */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 20px 20px 80px;
+    }
+
+    /* ヒーロー画像 */
+    .hero {
+      margin: 40px 0;
+      text-align: center;
+    }
+    .hero img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 4px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    .hero figcaption {
+      margin-top: 10px;
+      font-size: 0.82rem;
+      color: #777;
+      font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+      letter-spacing: 0.05em;
+    }
+
+    /* リード文 */
+    .lead {
+      font-size: 1.05rem;
+      line-height: 2.1;
+      color: #3a3a3a;
+      border-left: 4px solid #8b1a1a;
+      padding-left: 20px;
+      margin: 40px 0;
+    }
+
+    /* セクション */
+    section {
+      margin: 60px 0;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      letter-spacing: 0.1em;
+      color: #1a1a1a;
+      border-bottom: 2px solid #8b1a1a;
+      padding-bottom: 10px;
+      margin-bottom: 28px;
+    }
+    h2 .num {
+      color: #8b1a1a;
+      margin-right: 10px;
+      font-size: 1.1rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      color: #2a2a2a;
+      margin: 28px 0 12px;
+      padding-left: 12px;
+      border-left: 3px solid #c8a96e;
+    }
+
+    p {
+      margin-bottom: 16px;
+      font-size: 0.97rem;
+    }
+
+    /* 画像レイアウト */
+    .img-full {
+      margin: 28px 0;
+      text-align: center;
+    }
+    .img-full img {
+      width: 100%;
+      border-radius: 3px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+
+    .img-half {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 28px 0;
+    }
+    .img-half figure img {
+      width: 100%;
+      border-radius: 3px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+
+    .img-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+      margin: 24px 0;
+    }
+    .img-right .text { order: 1; }
+    .img-right figure { order: 2; }
+    .img-right figure img {
+      width: 100%;
+      border-radius: 3px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+
+    figcaption {
+      font-size: 0.78rem;
+      color: #777;
+      margin-top: 6px;
+      text-align: center;
+      font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+      line-height: 1.5;
+    }
+
+    /* データボックス */
+    .data-box {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 22px 26px;
+      margin: 24px 0;
+      font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+    }
+    .data-box h4 {
+      font-size: 0.9rem;
+      color: #8b1a1a;
+      letter-spacing: 0.1em;
+      margin-bottom: 14px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+    }
+    th {
+      background: #2a2a2a;
+      color: #fff;
+      padding: 9px 14px;
+      text-align: left;
+      font-weight: normal;
+      letter-spacing: 0.05em;
+    }
+    td {
+      padding: 9px 14px;
+      border-bottom: 1px solid #e8e8e8;
+    }
+    tr:nth-child(even) td { background: #fafafa; }
+
+    /* 証言・引用ボックス */
+    blockquote {
+      background: #1a1a1a;
+      color: #f0f0f0;
+      padding: 28px 32px;
+      margin: 32px 0;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      line-height: 2;
+      position: relative;
+    }
+    blockquote::before {
+      content: "「";
+      font-size: 3rem;
+      color: #8b1a1a;
+      position: absolute;
+      top: 10px;
+      left: 14px;
+      line-height: 1;
+    }
+    blockquote p { margin-bottom: 0; color: #f0f0f0; }
+    blockquote cite {
+      display: block;
+      margin-top: 14px;
+      font-size: 0.8rem;
+      color: #aaa;
+      text-align: right;
+      font-style: normal;
+    }
+
+    /* ハイライトカード */
+    .highlight {
+      background: #8b1a1a;
+      color: #fff;
+      padding: 22px 26px;
+      border-radius: 4px;
+      margin: 28px 0;
+      font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+    }
+    .highlight strong {
+      font-size: 1.1rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .highlight p { color: #f5d5d5; margin-bottom: 0; font-size: 0.9rem; }
+
+    /* 区切り線 */
+    hr {
+      border: none;
+      border-top: 1px solid #d0c8b8;
+      margin: 50px 0;
+    }
+
+    /* フッター */
+    footer {
+      background: #1a1a1a;
+      color: #888;
+      text-align: center;
+      padding: 36px 20px;
+      font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+      font-size: 0.82rem;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 640px) {
+      .img-half, .img-right {
+        grid-template-columns: 1fr;
+      }
+      .img-right .text, .img-right figure { order: unset; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <p class="label">戦跡訪問記 ／ PEACE MEMORIAL MUSEUM</p>
+  <h1>大刀洗平和記念館<br>訪問記</h1>
+  <p class="subtitle">福岡県朝倉市 ― 飛行場が伝える、あの戦争の記憶</p>
+</header>
+
+<main>
+
+  <figure class="hero">
+    <img src="images/01_外観.jpg" alt="大刀洗平和記念館 外観">
+    <figcaption>大刀洗平和記念館（福岡県朝倉市）。かつての大刀洗飛行場跡地に建てられた戦争記念館。</figcaption>
+  </figure>
+
+  <p class="lead">
+    福岡県朝倉市に、かつて帝国陸軍の巨大な飛行場があった。「大刀洗飛行場」——ここは日本の若者たちが空へと旅立ち、そして多くが二度と還らなかった場所だ。飛行場跡地に建てられた大刀洗平和記念館は、爆撃・特攻・少年兵・市民生活など、太平洋戦争のあらゆる断面を今に伝えている。展示のパネルや遺品・実物機を通じて見えてきた「あの戦争」を、写真とともに振り返る。
+  </p>
+
+  <hr>
+
+  <!-- ==================== 1 ==================== -->
+  <section>
+    <h2><span class="num">01</span>大刀洗飛行場の歴史——軍都の誕生</h2>
+
+    <div class="img-right">
+      <div class="text">
+        <p>
+          大刀洗飛行場は、現在の朝倉市・筑前町・三井郡にまたがる広大な土地に建設された陸軍の飛行場だ。建設前は一面の雑木林だったこの地に、飛行場の完成とともに人々が集まり始めた。商店、旅館、工場——活気あふれる「軍都」が生まれていった。
+        </p>
+        <p>
+          飛行場を支えたのは鉄道網だった。稲倉鉄道・中央軌道・国鉄甘木線が整備され、全国から兵士・軍属・工員が運ばれてきた。飛行場の正門近くには「新町商店街」と「営門前商店街」が形成され、にぎわいを見せた。
+        </p>
+      </div>
+      <figure>
+        <img src="images/02_飛行場と鉄道.jpg" alt="飛行場と鉄道網の展示">
+        <figcaption>飛行場を支えた鉄道網と、にぎわいを見せた商店街の記録</figcaption>
+      </figure>
+    </div>
+
+    <figure class="img-full">
+      <img src="images/03_軍都の発展.jpg" alt="軍都としての発展パネル">
+      <figcaption>飛行場周辺の地図と、軍都として発展した町の様子</figcaption>
+    </figure>
+  </section>
+
+  <!-- ==================== 2 ==================== -->
+  <section>
+    <h2><span class="num">02</span>B-29による爆撃——TARGET 1236</h2>
+
+    <p>
+      昭和20年（1945）3月27日、大刀洗飛行場に空襲が迫った。米軍第XXI爆撃司令部（XXI BOM. COM.）が送り込んだB-29の大編隊が、この飛行場を「TARGET 1236」として直撃した。
+    </p>
+
+    <div class="img-half">
+      <figure>
+        <img src="images/04_B29爆撃.jpg" alt="B-29爆撃の記録パネル">
+        <figcaption>爆撃記録パネル。救われた命・高村部隊長の功績も紹介されている</figcaption>
+      </figure>
+      <figure>
+        <img src="images/05_爆撃地図.jpg" alt="爆撃地図（Visible Hits / Probable Hits）">
+        <figcaption>爆撃地図。赤点が着弾位置（Visible Hits / Probable Hits）</figcaption>
+      </figure>
+    </div>
+
+    <div class="data-box">
+      <h4>爆撃の概要</h4>
+      <table>
+        <tr><th>実施日</th><td>昭和20年（1945）3月27日・5月5日</td></tr>
+        <tr><th>攻撃部隊</th><td>米第XXI爆撃司令部 B-29編隊</td></tr>
+        <tr><th>駐留兵員</th><td>約2,800〜4,000名</td></tr>
+        <tr><th>死者数</th><td>約130名</td></tr>
+        <tr><th>備考</th><td>高村部隊長の的確な指示により多数の命が救われた</td></tr>
+      </table>
+    </div>
+
+    <p>
+      空襲警報とともに飛行場の防空壕に逃げ込んだ兵士たち。しかし校舎や整備施設は次々と爆撃に飲み込まれた。駐留兵員の命中率（死者率）は約3〜5%にとどまったが、周辺の町や疎開先の学校教育施設にも甚大な被害が及んだ。
+    </p>
+  </section>
+
+  <!-- ==================== 3 ==================== -->
+  <section>
+    <h2><span class="num">03</span>失われた命——子どもたちの悲劇</h2>
+
+    <figure class="img-full">
+      <img src="images/06_失われた命.jpg" alt="失われた命・子どもたちの悲劇パネル">
+      <figcaption>「失去的生命（Lost lives）」——疎開中の小学生たちが爆撃に巻き込まれた悲劇を伝えるパネル</figcaption>
+    </figure>
+
+    <p>
+      爆撃がもたらしたのは、兵士だけの犠牲ではなかった。飛行場周辺には、都市部から疎開してきた多くの子どもたちが暮らしていた。
+    </p>
+
+    <h3>額田の悲劇</h3>
+    <p>
+      昭和20年3月27日の空襲では、飛行場近くに疎開していた子どもたちが巻き込まれた。額田地区では<strong>31名の小学生</strong>が命を落とした。親元を離れ、疎開先で平和な日を過ごしていた子どもたちが、突然の爆撃に命を奪われたのだ。
+    </p>
+
+    <h3>三井屋の悲劇</h3>
+    <p>
+      三井屋周辺でも、同じく疎開中の子どもたちが犠牲となった。爆弾は兵器だけを狙わない——そのことを、この地の悲劇は静かに語り続けている。
+    </p>
+  </section>
+
+  <!-- ==================== 4 ==================== -->
+  <section>
+    <h2><span class="num">04</span>戦時下の市民生活</h2>
+
+    <div class="img-half">
+      <figure>
+        <img src="images/07_戦時下の生活.jpg" alt="戦時下の生活パネル">
+        <figcaption>女性の動員・学校制度の変化を伝える展示</figcaption>
+      </figure>
+      <figure>
+        <img src="images/08_衣服の配給.jpg" alt="衣服の配給・軍人への憧れパネル">
+        <figcaption>衣料の配給制と、戦争柄の着物が流行した時代</figcaption>
+      </figure>
+    </div>
+
+    <h3>国民学校制度の始まり</h3>
+    <p>
+      昭和16年（1941）、小学校は「国民学校」に改称された。教科書の内容は軍国主義色に塗り替えられ、授業にはカズマヤカーゲーなどの軍事的な遊びが取り入れられた。子どもたちは幼いころから「お国のために」という価値観の中で育てられた。
+    </p>
+
+    <h3>女性の動員</h3>
+    <p>
+      昭和18年（1943）、政府は「国内必勝勤労対策」を決定。14〜24歳の未婚女性が「挺身隊員」として飛行機工場・農家・鉱山など各地の職場に動員された。近隣からも約100名の女子挺身隊員が大刀洗周辺に集められたという。
+    </p>
+
+    <h3>衣服も配給制に</h3>
+    <p>
+      昭和17年（1942）から衣料品は切符制・配給制となった。生活は日を追うごとに苦しくなったが、一方で戦場や戦闘機をモチーフにした「戦争柄の着物」が流行するという、戦時ならではの光景もあった。
+    </p>
+
+    <div class="highlight">
+      <strong>駐在婦の存在</strong>
+      <p>農村部の人手不足を補うため、若い女性教師・女学生が「駐在婦」として地方の農家に派遣された。現代からは想像しにくいが、当時の日本では若い女性が見知らぬ土地で農家の仕事を担う光景が日常となっていた。</p>
+    </div>
+  </section>
+
+  <!-- ==================== 5 ==================== -->
+  <section>
+    <h2><span class="num">05</span>飛行学校と少年飛行兵</h2>
+
+    <div class="img-half">
+      <figure>
+        <img src="images/09_飛行学校分校.jpg" alt="飛行学校分校パネル">
+        <figcaption>大刀洗陸軍飛行学校は全国18か所に分校を展開した</figcaption>
+      </figure>
+      <figure>
+        <img src="images/10_少年飛行兵訓練.jpg" alt="少年飛行兵の訓練記録">
+        <figcaption>少年飛行兵の訓練と進路を示す詳細な図表</figcaption>
+      </figure>
+    </div>
+
+    <h3>大刀洗陸軍飛行学校</h3>
+    <p>
+      大刀洗陸軍飛行学校は、日本の航空兵力の中核を担う特校隊基地だった。知覧（鹿児島）・佐賀など全国に有名な訓練基地が存在する中、大刀洗はその本校として機能し、全国18か所の分校を統括した。終戦までに日本の<strong>飛行士の3分の2</strong>を養成したといわれる。
+    </p>
+
+    <h3>少年飛行兵制度</h3>
+    <p>
+      昭和18年（1943）10月、2,000名以上が大刀洗飛行場に入学した。受験競争率は大変高く、14〜18歳の少年たちが「お国のため」に志願した。わずか数か月〜2年の訓練を経て、多くが特攻要員として前線へ配置された。
+    </p>
+
+    <div class="img-half">
+      <figure>
+        <img src="images/11_少年飛行兵13期.jpg" alt="少年飛行兵第13期パネル">
+        <figcaption>少年飛行兵第13期——フィリピン特攻に参加した者も多い</figcaption>
+      </figure>
+      <figure>
+        <img src="images/12_少年飛行兵14期.jpg" alt="少年飛行兵第14期訓練課程図">
+        <figcaption>少年飛行兵第14期（乙種）の訓練課程図。操縦・整備・通信に分かれた</figcaption>
+      </figure>
+    </div>
+
+    <div class="data-box">
+      <h4>少年飛行兵第14期（乙種）訓練概要</h4>
+      <table>
+        <tr><th>合格者数</th><td>約1,500名</td></tr>
+        <tr><th>内訳</th><td>操縦 500名 ／ 整備 500名 ／ 通信 500名</td></tr>
+        <tr><th>訓練場所</th><td>大刀洗陸軍飛行学校（地上教育・滑空機）</td></tr>
+        <tr><th>訓練期間</th><td>地上教育 4か月 ／ 基本操縦教育 4か月</td></tr>
+        <tr><th>配属後</th><td>各部隊へ配置、分科基本業務・基本戦技教育（2か月）</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ==================== 6 ==================== -->
+  <section>
+    <h2><span class="num">06</span>展示機——零戦と震電</h2>
+
+    <h3>零戦三二型（Y2-128）</h3>
+    <figure class="img-full">
+      <img src="images/13_零戦展示.jpg" alt="零戦三二型展示パネル">
+      <figcaption>零戦三二型（Y2-128）の来歴を解説するパネル。パラオから発見・回収された機体</figcaption>
+    </figure>
+
+    <p>
+      館内に永久展示されている零戦三二型（Y2-128）は、太平洋の島・パラオで発見された機体だ。昭和55年（1980）に福岡航空宇宙協会が設立され、本機の帰還と修復に向けた活動が始まった。昭和60年（1985）、機体はサイパンを経て日本に帰還。本格的な復元・修復が行われ、現在は当館に永久展示されている。
+    </p>
+
+    <h3>局地戦闘機「震電」</h3>
+    <figure class="img-full">
+      <img src="images/14_震電.jpg" alt="震電（Kyushu J7W1 Shinden）解説パネル">
+      <figcaption>「最後の切り札」と呼ばれた局地戦闘機「震電」。前翼型（エンテ型）の独特の設計</figcaption>
+    </figure>
+
+    <p>
+      B-29迎撃のために開発された局地戦闘機「震電（J7W1）」は、海軍航空技術廠の<strong>鶴野正敬技術大尉</strong>が主任設計者として製作した。前翼型の独特な機体形状と強力なエンジンを持ち、昭和20年（1945）6月から試験飛行を開始。しかし3回の試験飛行を経ただけで終戦を迎え、量産化には至らなかった。
+    </p>
+  </section>
+
+  <!-- ==================== 7 ==================== -->
+  <section>
+    <h2><span class="num">07</span>特攻作戦——人が兵器となった時代</h2>
+
+    <figure class="img-full">
+      <img src="images/15_特攻兵器.jpg" alt="特攻用兵器の写真展示">
+      <figcaption>特攻用に開発された各種兵器。人間ロケット「桜花」、人間魚雷「回天」、水中特攻「伏龍」など</figcaption>
+    </figure>
+
+    <p>
+      特攻——それは、人間が搭乗した航空機や魚雷、ボートそのものを爆弾として敵艦に体当たりさせる作戦だった。「特攻は兵器ではなく、人間が兵器になる攻撃」と展示は伝える。
+    </p>
+
+    <h3>特攻の時と場所</h3>
+    <figure class="img-full">
+      <img src="images/20_特攻の時と場所.jpg" alt="特攻の時と場所パネル">
+      <figcaption>特攻が行われた地域・時期の全体像。フィリピン・九州南西・沖縄と段階的に拡大した</figcaption>
+    </figure>
+
+    <div class="data-box">
+      <h4>特攻作戦の推移</h4>
+      <table>
+        <tr><th>戦域</th><th>時期</th><th>特徴</th></tr>
+        <tr><td>フィリピン</td><td>1944年10月〜</td><td>最初の組織的特攻</td></tr>
+        <tr><td>九州南西方面</td><td>1945年初め</td><td>台湾沖・東シナ海方面</td></tr>
+        <tr><td>沖縄</td><td>1945年4〜6月</td><td>最大規模の特攻作戦</td></tr>
+      </table>
+    </div>
+
+    <h3>特攻の戦果</h3>
+    <figure class="img-full">
+      <img src="images/18_特攻の戦果.jpg" alt="特攻の戦果チャート">
+      <figcaption>「特攻の戦果」。月別の米艦船沈没・損傷数と、出撃した特攻隊員数の推移</figcaption>
+    </figure>
+
+    <div class="data-box">
+      <h4>特攻の被害規模（概要）</h4>
+      <table>
+        <tr><th>総出撃機数</th><td>陸海軍合計 約2,550機</td></tr>
+        <tr><th>命中率</th><th>約16%（単機あたり）</th></tr>
+        <tr><th>日本側戦死者</th><td>約4,000名</td></tr>
+        <tr><th>米側被害</th><td>多数の艦船が沈没・損傷。フランクリン等では1隻で800人以上が死亡</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ==================== 8 ==================== -->
+  <section>
+    <h2><span class="num">08</span>第三〇三振武隊——8月15日の出撃命令</h2>
+
+    <figure class="img-full">
+      <img src="images/16_第303振武隊.jpg" alt="第三〇三振武隊パネルと隊員写真">
+      <figcaption>大刀洗飛行場のピストで待機する第三〇三・三〇四振武隊員たち。終戦の日に出撃を待った</figcaption>
+    </figure>
+
+    <p>
+      昭和20年（1945）8月15日——終戦の日、大刀洗飛行場には特攻を待つ若者たちがいた。
+    </p>
+
+    <p>
+      陸軍の第二九九・三〇〇・三〇三・三〇四振武隊、各8名が同飛行場で待機していた。戦局が悪化するにつれ米軍の包囲網は狭まり、大刀洗飛行場でも特別攻撃隊がこの地から直接出撃するようになっていた。第三〇三振武隊は同年6月より大刀洗南飛行場に駐屯し、飛行訓練を行いながら出撃命令を待ち続けていた。
+    </p>
+
+    <div class="highlight">
+      <strong>運命の1時間</strong>
+      <p>ついに8月15日の午前11時、第二九九・三〇〇振武隊に出撃命令が下った。出撃予定日時は「8月15日午後6時」——しかし命令のわずか1時間後、天皇陛下の玉音放送が流れ、終戦が告げられた。第三〇三振武隊はついに出撃することなく、終戦を迎えたのだった。</p>
+    </div>
+  </section>
+
+  <!-- ==================== 9 ==================== -->
+  <section>
+    <h2><span class="num">09</span>B-29——「超空の要塞」の技術</h2>
+
+    <figure class="img-full">
+      <img src="images/17_B29本土空襲.jpg" alt="B-29本土空襲の地図">
+      <figcaption>B-29による本土空襲の被害者数を示した地図。全国で計約56万人が犠牲になったと推測される</figcaption>
+    </figure>
+
+    <div class="data-box">
+      <h4>ボーイングB-29の主要性能</h4>
+      <table>
+        <tr><th>最高速度</th><td>570 km/h</td></tr>
+        <tr><th>実用上昇限度</th><td>約10,000 m</td></tr>
+        <tr><th>航続距離</th><td>9,650 km</td></tr>
+        <tr><th>爆弾搭載量</th><td>最大9トン</td></tr>
+        <tr><th>エンジン</th><td>排気タービン付き2,200馬力×4基</td></tr>
+        <tr><th>武装</th><td>12.7mm機銃（20mm含む）×多数</td></tr>
+      </table>
+    </div>
+
+    <p>
+      B-29による本土への大規模空襲は昭和19年（1944）6月、北部九州への攻撃から始まった。サイパン島の陥落後は東京をはじめ日本本土の大半が爆撃圏内に入り、空襲はさらに激化。昭和20年8月15日の終戦日まで続いた。無差別爆撃による全国の死者は<strong>約56万人</strong>と推測されている。
+    </p>
+
+    <h3>米軍の対特攻防御システム</h3>
+    <figure class="img-full">
+      <img src="images/19_米軍の防御.jpg" alt="米軍の防御システム解説パネル">
+      <figcaption>米軍が構築したレーダー網とVT信管の仕組み</figcaption>
+    </figure>
+
+    <p>
+      米軍は特攻機の来襲に対し、沖縄周辺を16のブロックに分けたレーダー網を構築。「レーダー探知 → 戦闘機迎撃 → 対空砲火」という三段階の防御体制を敷いた。さらに<strong>VT信管（近接信管）</strong>を搭載した砲弾は、目標に接近すると自動で爆発する画期的な技術で、多くの特攻機を撃墜した。
+    </p>
+  </section>
+
+  <!-- ==================== 10 ==================== -->
+  <section>
+    <h2><span class="num">10</span>平和へのメッセージ</h2>
+
+    <figure class="img-full">
+      <img src="images/21_平和へのメッセージ.jpg" alt="朝倉青年会議所の平和メッセージ">
+      <figcaption>館外に建てられた「戦争を知らない世代へ」のメッセージ板（朝倉青年会議所）</figcaption>
+    </figure>
+
+    <blockquote>
+      <p>
+        太平洋戦争末期 昭和20年3月27日、国軍平島から大刀洗飛行場に来たB-29爆撃機の大軍は大刀洗飛行場の近くの森で小学生三十名を殺した。この時を生きた大人の人が今だんだん少なくなっていきます。小学生の我たちは父母・兄弟でこの悲惨な出来事を考え、もう二度とこのような悲しい戦争は繰り返してはならないと思います。私達には次の世代の子供達に戦争を文化させることなく、祖父母の語った事を思い、以来児童達の自由・発展の毎日をすごしていきたいと思います。
+      </p>
+      <cite>— 朝倉青年会議所</cite>
+    </blockquote>
+
+    <p>
+      館外には、爆撃で犠牲になった子どもたちゆかりの「槻田の森」が今も残されている。市民の手で大切に守り続けられるこの森は、戦争の記憶を次の世代へと伝える生きた証だ。
+    </p>
+
+    <p>
+      展示を巡り終えたとき、印象に残るのは単なる「歴史の事実」ではない。数字の裏にある一人ひとりの人生——志を持って空に挑んだ少年飛行兵、爆撃から命を守ろうとした隊長、疎開先で空襲に倒れた子どもたち、出撃命令を待ちながら終戦を迎えた特攻隊員。大刀洗平和記念館は、その一つひとつの命の重さを、今日も静かに伝え続けている。
+    </p>
+  </section>
+
+  <hr>
+
+  <div class="data-box">
+    <h4>大刀洗平和記念館 基本情報</h4>
+    <table>
+      <tr><th>所在地</th><td>福岡県朝倉郡筑前町依田76-1</td></tr>
+      <tr><th>アクセス</th><td>甘木鉄道 大刀洗駅より徒歩約15分</td></tr>
+      <tr><th>主な展示</th><td>零戦三二型（実物）・震電模型・特攻関連資料・爆撃記録など</td></tr>
+    </table>
+  </div>
+
+</main>
+
+<footer>
+  <p>大刀洗平和記念館 訪問記</p>
+  <p style="margin-top:8px;">写真・文：訪問記録より構成</p>
+</footer>
+
+</body>
+</html>
